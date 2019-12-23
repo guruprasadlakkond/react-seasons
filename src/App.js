@@ -30,6 +30,7 @@ export default class App extends React.Component {
       p => {
         console.log(p);
         this.setState({ lat: p.coords.latitude.toFixed(3) });
+        // this.state.lat = p.coords.latitude.toFixed(3);
       },
       er => this.setState({ err: er.message })
     );
@@ -81,6 +82,11 @@ export default class App extends React.Component {
 
     //comp = <Spinner message="Please accept location request" />;
 
-    return <div className="border red">{this.renderContent()}</div>;
+    return (
+      <div className="border red">
+        {this.renderContent()}
+        {/* <button onClick={this.handle}>Click on me!</button> */}
+      </div>
+    );
   }
 }

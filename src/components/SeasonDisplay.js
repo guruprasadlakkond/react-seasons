@@ -12,6 +12,9 @@ const seasonConfig = {
   }
 };
 export default class SeasonDisplay extends React.Component {
+  componentDidUpdate() {
+    console.log("season dsiplay Comp updated and rerendered");
+  }
   getSeason(lat, month) {
     if (month > 2 && month < 9) {
       return lat > 0 ? "summer" : "winter";
